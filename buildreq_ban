@@ -1,0 +1,8 @@
+# This file contains build requirements that get picked up but are
+# undesirable. One entry per line, no whitespace.
+pypi(folium)
+pypi(sphinx_copybutton)
+pypi(sphinx_design)
+pypi(sphinx_thebe)
+pypi(sphinx_togglebutton)
+pypi(sphinxext_opengraph)
