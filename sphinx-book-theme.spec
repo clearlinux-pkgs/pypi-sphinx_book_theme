@@ -4,7 +4,7 @@
 #
 Name     : sphinx-book-theme
 Version  : 0.1.7
-Release  : 4
+Release  : 5
 URL      : https://files.pythonhosted.org/packages/2b/8c/50526eac2d3520e8b17d21faeafbbd7d42dba682b44770fd00fa401ce829/sphinx-book-theme-0.1.7.tar.gz
 Source0  : https://files.pythonhosted.org/packages/2b/8c/50526eac2d3520e8b17d21faeafbbd7d42dba682b44770fd00fa401ce829/sphinx-book-theme-0.1.7.tar.gz
 Summary  : Jupyter Book: Create an online book with Jupyter Notebooks
@@ -15,8 +15,10 @@ Requires: sphinx-book-theme-python = %{version}-%{release}
 Requires: sphinx-book-theme-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(beautifulsoup4)
+BuildRequires : pypi(click)
 BuildRequires : pypi(docutils)
 BuildRequires : pypi(importlib_resources)
+BuildRequires : pypi(pydata_sphinx_theme)
 BuildRequires : pypi(pyyaml)
 BuildRequires : pypi(sphinx)
 
@@ -70,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1637595155
+export SOURCE_DATE_EPOCH=1637596896
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -81,7 +83,7 @@ export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 pypi-dep-fix.py . click
-pypi-dep-fix.py . dockutils
+pypi-dep-fix.py . docutils
 python3 setup.py build
 
 %install
@@ -91,7 +93,7 @@ mkdir -p %{buildroot}/usr/share/package-licenses/sphinx-book-theme
 cp %{_builddir}/sphinx-book-theme-0.1.7/LICENSE %{buildroot}/usr/share/package-licenses/sphinx-book-theme/99ca545faafef4ff35bee85e9485dce69e2bca54
 python3 -tt setup.py build  install --root=%{buildroot}
 pypi-dep-fix.py %{buildroot} click
-pypi-dep-fix.py %{buildroot} dockutils
+pypi-dep-fix.py %{buildroot} docutils
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
