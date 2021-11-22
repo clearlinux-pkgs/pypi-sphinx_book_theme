@@ -4,7 +4,7 @@
 #
 Name     : sphinx-book-theme
 Version  : 0.1.7
-Release  : 3
+Release  : 4
 URL      : https://files.pythonhosted.org/packages/2b/8c/50526eac2d3520e8b17d21faeafbbd7d42dba682b44770fd00fa401ce829/sphinx-book-theme-0.1.7.tar.gz
 Source0  : https://files.pythonhosted.org/packages/2b/8c/50526eac2d3520e8b17d21faeafbbd7d42dba682b44770fd00fa401ce829/sphinx-book-theme-0.1.7.tar.gz
 Summary  : Jupyter Book: Create an online book with Jupyter Notebooks
@@ -70,7 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1637367261
+export SOURCE_DATE_EPOCH=1637595155
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
